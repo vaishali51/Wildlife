@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/layout_myPets">
+
+    <ImageView
+        android:id="@+id/imagePet"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/blank_pet" />
+
+    <TextView
+        android:id="@+id/namePet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imagePet"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="40dp"
+        android:text="Name:" />
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_alignStart="@+id/namePet"
+        android:layout_below="@+id/namePet"
+        android:layout_marginTop="25dp"
+        android:text="Color:" />
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_alignStart="@+id/color"
+        android:layout_below="@+id/color"
+        android:layout_marginTop="25dp"
+        android:text="Size:" />
+
+    <Button
+        android:id="@+id/viewInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:text="Information you must know"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:layout_below="@+id/size"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/login_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/viewInfo"
+        android:layout_below="@+id/viewInfo"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:layout_marginTop="22dp"
+        android:text="Login/Register"
+        android:layout_alignEnd="@+id/viewInfo" />
+
+</RelativeLayout>

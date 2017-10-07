@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/loginLayout">
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:layout_marginTop="39dp"
+        android:text="Login to continue..." />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:hint="Email"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/login_text"
+        android:layout_alignStart="@+id/login_text"
+        android:layout_alignEnd="@+id/login_text" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:hint="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_below="@+id/email"
+        android:layout_alignStart="@+id/email"
+        android:layout_alignEnd="@+id/email" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:background="@color/blue"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignEnd="@+id/password" />
+
+    <TextView
+        android:id="@+id/dont_have"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Don't have an account?"
+        android:layout_below="@+id/login_button"
+        android:layout_toStartOf="@+id/register"
+        android:layout_marginEnd="12dp" />
+
+    <Button
+        android:id="@+id/register"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register here"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textAlignment="viewStart"
+        android:layout_alignBaseline="@+id/dont_have"
+        android:layout_alignBottom="@+id/dont_have"
+        android:layout_alignEnd="@+id/login_button" />
+
+</RelativeLayout>
