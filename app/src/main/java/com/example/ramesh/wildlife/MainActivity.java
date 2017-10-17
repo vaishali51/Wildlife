@@ -1,5 +1,6 @@
 package com.example.ramesh.wildlife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -87,7 +88,8 @@ public class MainActivity extends AppCompatActivity
             MyPets myPets = new MyPets();
             fragmentTransaction.replace(R.id.fragment_container, myPets).commit();
         } else if (id == R.id.purchasePets) {
-
+            Intent intent = new Intent(this, PurchaseActivity.class);
+            startActivity(intent);
         } else if (id == R.id.information) {
 
         } else if (id == R.id.settings) {

@@ -19,7 +19,8 @@ public class PurchaseActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        webView=(WebView)findViewById(R.id.webView);
+        setContentView(R.layout.purchase_main);
+        webView= (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new MyBrowser());
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
