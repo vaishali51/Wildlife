@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by hp on 10/7/2017.
@@ -33,6 +34,7 @@ public class Login extends Fragment {
     Button mLogin, mRegister;
     ProgressDialog dialog;
     FirebaseAuth firebaseAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
 
     @Nullable
     @Override
@@ -60,7 +62,6 @@ public class Login extends Fragment {
                 }else{
                     Toast.makeText(getActivity(), "You are not connected to the internet", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -94,9 +95,9 @@ public class Login extends Fragment {
                     if (task.isSuccessful()) {
                         Toast.makeText(getActivity(), "Login successful", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-                        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                        MyPets myPets = new MyPets();
-                        fragmentTransaction.replace(R.id.fragment_container, myPets).commit();
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        DisplayPets displayPets = new DisplayPets();
+                        transaction.replace(R.id.fragment_container, displayPets).commit();
                     } else {
                         Toast.makeText(getActivity(), "Login Failed:" + task.getException(), Toast.LENGTH_SHORT).show();
                         dialog.dismiss();

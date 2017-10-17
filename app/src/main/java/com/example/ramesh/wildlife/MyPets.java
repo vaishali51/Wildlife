@@ -21,7 +21,6 @@ public class MyPets extends Fragment {
 
     Button moreInfo, loginRegister;
     FirebaseAuth firebaseAuth;
-    FirebaseAuth.AuthStateListener mAuthListener;
 
     @Nullable
     @Override
@@ -43,23 +42,12 @@ public class MyPets extends Fragment {
                     FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     Login login = new Login();
                     fragmentTransaction.replace(R.id.fragment_container, login).commit();
+                }else{
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    DisplayPets displayPets = new DisplayPets();
+                    transaction.replace(R.id.fragment_container, displayPets).commit();
                 }
             }
         });
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-
-                } else {
-                    // User is signed out
-
-                }
-            }
-        };
     }
 }

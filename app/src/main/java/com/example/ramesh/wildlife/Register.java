@@ -217,6 +217,9 @@ public class Register extends Fragment {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(getActivity(), "Registration Successful", Toast.LENGTH_SHORT).show();
+                            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                            DisplayPets displayPets = new DisplayPets();
+                            transaction.replace(R.id.fragment_container, displayPets).commit();
                         }
                     });
 
